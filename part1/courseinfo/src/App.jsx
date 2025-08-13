@@ -1,37 +1,40 @@
 const Header = (obj) => {
+  const course = obj.course
   return (
     <>
-      <h1>{obj.course.name}</h1>
+      <h1>{course.name}</h1>
     </>
   )
 }
 
 const Part = (obj) => {
-  console.log(obj)
+  const part = obj.part
   return (
     <>
       <p>
-        {obj.part.name} {obj.part.exercises}
+        {part.name} {part.exercises}
       </p>
     </>
   )
 }
 
 const Content = (obj) => {
+  const parts = obj.course.parts
   return (
     <>
-      <Part part={obj.course.parts[0]} />
-      <Part part={obj.course.parts[1]} />
-      <Part part={obj.course.parts[2]} />
+      <Part part={parts[0]} />
+      <Part part={parts[1]} />
+      <Part part={parts[2]} />
     </>
   )
 }
 
 const Total = (obj) => {
+  const parts = obj.course.parts
   const sumParts = p => p[0].exercises + p[1].exercises + p[2].exercises
   return (
     <>
-      <p>Number of exercises {sumParts(obj.course.parts)}</p>
+      <p>Number of exercises {sumParts(parts)}</p>
     </>
   )
 }
