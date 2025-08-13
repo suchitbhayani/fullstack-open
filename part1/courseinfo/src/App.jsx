@@ -1,5 +1,5 @@
-const Header = (obj) => {
-  const course = obj.course
+const Header = (props) => {
+  const course = props.course
   return (
     <>
       <h1>{course.name}</h1>
@@ -7,8 +7,8 @@ const Header = (obj) => {
   )
 }
 
-const Part = (obj) => {
-  const part = obj.part
+const Part = (props) => {
+  const part = props.part
   return (
     <>
       <p>
@@ -18,8 +18,8 @@ const Part = (obj) => {
   )
 }
 
-const Content = (obj) => {
-  const parts = obj.course.parts
+const Content = (props) => {
+  const parts = props.course.parts
   return (
     <>
       <Part part={parts[0]} />
@@ -29,8 +29,8 @@ const Content = (obj) => {
   )
 }
 
-const Total = (obj) => {
-  const parts = obj.course.parts
+const Total = (props) => {
+  const parts = props.course.parts
   const sumParts = p => p[0].exercises + p[1].exercises + p[2].exercises
   return (
     <>
