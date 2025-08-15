@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
+const Button = (
+  {onClick, text}) => <button onClick={onClick}>{text}</button>
 
 const Anecdote = ({quote, votes}) => {
   return (
