@@ -18,48 +18,6 @@ const App = () => {
   const handleNumberChange = event => setNewNumber(event.target.value)
   const handleQueryChange = event => setQuery(event.target.value)
 
-  // const addName = event => {
-  //   event.preventDefault()
-
-  //   // person already exists
-  //   if (persons.some(person => person.name === newName)) {
-  //     const existingPerson = persons.find(person => person.name === newName)
-  //     const existingName = existingPerson.name
-  //     const existingID = existingPerson.id
-
-  //     // confirm we want to update
-  //     if (confirm(`${existingName} is already added to the phonebook, replace the old number with a new one?`)) {
-  //       const newObject = {...existingPerson, 'number': newNumber}
-  //       personService
-  //         .update(existingID, newObject)
-  //         .catch(error => {
-  //           setErrorMessage(`Information of ${newName} has already been removed from server`)
-  //           setTimeout(() => {
-  //             setErrorMessage(null)}, 5000)
-  //         })
-  //       setPersons(persons.map(person => person.id === existingID ? newObject : person))
-  //       setSuccessMessage(`${newName} has been added`)
-  //       setTimeout(() => {
-  //         setSuccessMessage(null)}, 5000)
-  //     } else {
-  //       return
-  //     }
-
-  //   // add new person
-  //   } else {
-  //     const newObject = {'name': newName, 'number': newNumber}
-  //     personService.create(newObject)
-  //     setPersons(persons.concat(newObject))
-  //     setSuccessMessage(`${newName} has been added`)
-  //     setTimeout(() => {
-  //       setSuccessMessage(null)}, 5000)
-  //   }
-
-  //   // cleanup
-  //   setNewName('')
-  //   setNewNumber('')
-  // }
-
   const addName = (event) => {
     event.preventDefault();
     const existingPerson = persons.find(p => p.name === newName);
