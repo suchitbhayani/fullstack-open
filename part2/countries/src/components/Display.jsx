@@ -6,16 +6,16 @@ const Display = ({ matches, setMatches }) => {
   }
 
   if (matches.length > 1 && matches.length <= 10) {
-  return (
-    <ul>
-      {matches.map(country => (
-        <li key={country}>
-          {country}{" "}
-          <button onClick={() => setMatches([country])}>Show</button>
-        </li>
-      ))}
-    </ul>
-  )
+    return (
+      <ul>
+        {matches.map(country => (
+          <li key={country}>
+            {country}{" "}
+            <button onClick={() => setMatches([country])}>Show</button>
+          </li>
+        ))}
+      </ul>
+    )
 }
 
   if (matches.length === 1) {
