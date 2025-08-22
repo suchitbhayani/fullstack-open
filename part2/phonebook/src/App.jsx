@@ -70,9 +70,9 @@ const App = () => {
   const personsToShow = persons.filter(person => person.name.toLowerCase().includes(query.toLowerCase()))
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/persons')
-      .then(response => setPersons(response.data))
+    personService
+      .getAll()
+      .then(data => setPersons(data))
   }, [])
 
   return (
