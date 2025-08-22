@@ -71,7 +71,10 @@ const App = () => {
   useEffect(() => {
     personService
       .getAll()
-      .then(data => setPersons(data))
+      .then(data => {
+        console.log('Data from backend:', data)
+        setPersons(data)
+      })
   }, [])
 
   return (
